@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.category {
+  font-weight: bold;
+}
+
+.category.study {
+  color: blue;
+}
+
+.category.housework {
+  color: orange;
+}
+
+.category.exercise {
+  color: green;
+}
+
+.category.hobbies {
+  color: purple;
+}

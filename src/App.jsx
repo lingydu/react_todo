@@ -34,12 +34,34 @@ function App() {
 
 export default App
 */}
+import './App.css';
 
-
+import {useState} from 'react';
 function App() {
+  const [todos, setTodos] = useState ('');
+
   return (
-    <div>
-      <h1>Hello React!</h1>
+    <div style={{ padding: '20px' }}>
+      <h1>My To-Do List</h1>
+      <ul>
+        <div style={{ marginBottom: '1rem' }}>
+  <input
+    type="text"
+    placeholder="New to-do..."
+    value={newTodo}
+    onChange={(e) => setNewTodo(e.target.value)}
+  />
+  <button onClick={handleAddTodo}>Add</button>
+</div>
+
+        {todos.map((td) => (
+          <li key={td.id}>
+          {td.completed ? '✅' : '❌'}{' '}<span className={`category ${td.category.toLowerCase()}`}>
+        [{td.category}]
+      </span>{' '} {td.text}
+        </li>
+        ))}
+      </ul>
     </div>
   );
 }
